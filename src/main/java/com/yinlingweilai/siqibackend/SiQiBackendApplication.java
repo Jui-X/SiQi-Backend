@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @MapperScan("com.yinlingweilai.siqibackend.DAO")
 @ComponentScan("com.yinlingweilai.siqibackend")
-@EnableAutoConfiguration
 @SpringBootApplication
 public class SiQiBackendApplication {
 

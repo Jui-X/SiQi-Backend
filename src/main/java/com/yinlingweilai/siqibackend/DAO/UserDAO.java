@@ -1,10 +1,15 @@
 package com.yinlingweilai.siqibackend.DAO;
 
-/**
- * @param: none
- * @description: 用户Data Access Object
- * @author: KingJ
- * @create: 2019-04-02 23:13
- **/
-public class UserDAO {
+import com.yinlingweilai.siqibackend.DTO.UserDTO;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
+public interface UserDAO {
+
+    @Select("SELECT nickname FROM user WHERE id = #{id}")
+    UserDTO queryUserByID(@Param("id") int id);
+
+    @Update("UPDATE user SET nickname = #{nickname} WHERE id = #{id}")
+    void updateUserInfo(@Param("id") int id, @Param("nickName") String nickname);
 }

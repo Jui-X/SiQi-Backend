@@ -22,33 +22,34 @@ public class User {
     private Integer id;
 
     /** 用户名 */
-    @ApiModelProperty(value = "用户名", name = "username", example = "kingj", required = true)
+    @ApiModelProperty(value = "用户名", name = "username", example = "juix", required = true)
     private String name;
 
     /** 用户密码 */
     @ApiModelProperty(value = "密码", name = "password", example = "123456", required = true)
     private String password;
 
-    /**  */
+    /** 用户头像 */
     @ApiModelProperty(hidden = true)
     @Column(name = "face_image")
     private String faceImage;
 
-    /**  */
+    /** 用户昵称 */
     @ApiModelProperty(hidden = true)
+    @Column(name = "nickname")
     private String nickname;
 
-    /**  */
+    /** 粉丝数 */
     @ApiModelProperty(hidden = true)
     @Column(name = "fans_count")
     private int fansCount;
 
-    /**  */
+    /** 关注数 */
     @ApiModelProperty(hidden = true)
     @Column(name = "follow_count")
     private int followCount;
 
-    /**  */
+    /** 收到的赞 */
     @ApiModelProperty(hidden = true)
     @Column(name = "receive_like_counts")
     private int receiveLikeCounts;

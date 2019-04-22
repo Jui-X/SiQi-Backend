@@ -16,7 +16,7 @@ import java.sql.Timestamp;
  **/
 @Data
 @ApiModel(value = "课程视频", description = "这是课程视频")
-public class Course_Video {
+public class CourseVideo {
 
     /**  */
     @ApiModelProperty(value = "视频id", name = "video_id", example = "123", required = true)
