@@ -12,4 +12,7 @@ public interface UserDAO {
 
     @Update("UPDATE user SET nickname = #{nickname} WHERE id = #{id}")
     void updateUserInfo(@Param("id") int id, @Param("nickName") String nickname);
+
+    @Update("UPDATE user SET face_image = #{facePath} WHERE id = #{id}")
+    void updateUserFace(@Param("id") int id, @Param("facePath") String facePath);
 }

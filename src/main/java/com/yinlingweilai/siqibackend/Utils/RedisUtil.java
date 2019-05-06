@@ -2,6 +2,7 @@ package com.yinlingweilai.siqibackend.Utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  * @author: KingJ
  * @create: 2019-04-05 11:19
  **/
+@Component
 public class RedisUtil {
 
     @Autowired

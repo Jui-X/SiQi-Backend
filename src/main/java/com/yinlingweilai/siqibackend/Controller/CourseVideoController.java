@@ -28,7 +28,7 @@ public class CourseVideoController {
 
     @ApiOperation(value="查询所有课程视频", notes="查询所有课程视频的接口")
     @PostMapping("/list")
-    public JsonResult listCourseVideo() {
+    public JsonResult listCourseVideos() {
         List<CourseVideo> courseVideoList = courseVideoService.listCourseVideo();
 
         if (courseVideoList != null) {
