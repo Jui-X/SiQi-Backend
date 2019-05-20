@@ -28,8 +28,8 @@ public class WXLoginController {
     @Autowired
     private RedisUtil redis;
 
-    @PostMapping("/wxLogin")
-    public JsonResult wxLogin(@RequestBody(required = true)JSONObject codeJson) {
+    @PostMapping()
+    public JsonResult wxLogin(@RequestBody JSONObject codeJson) {
         String code = codeJson.getString("code");
 
         WXLogin wxLogin = new WXLogin();
@@ -37,14 +37,13 @@ public class WXLoginController {
         WXSession session = wxLogin.WXLogin(code);
         System.out.println(session);
 
-
         redis.set("user-redis-session" + session.getOpenid(),
                 session.getSession_key(),
                 RedisConstant.EXPIRE_TIME);
 
-        Map<String, String> result = new ConcurrentHashMap<>();
-        result.put("code", code);
+//        Map<String, String> result = new ConcurrentHashMap<>();
+//        result.put("code", code);
 
-        return JsonResult.ok(result);
+        return JsonResult.ok("已成功授权~");
     }
 }

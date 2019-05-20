@@ -60,52 +60,52 @@ public class UserController {
             return JsonResult.errorMsg("用户ID不能为空！");
         }
 
-        // 文件保存的命名空间
-        String fileSpace = "C:/Users/50131/Documents/GitHub/SiQi-Backend/src/main/resources/face";
-        // 保存到数据库中的相对路径
-        String DBPath = "/" + userID;
+//        // 文件保存的命名空间
+//        String fileSpace = "C:/Users/50131/Documents/GitHub/SiQi-Backend/src/main/resources/face";
+//        // 保存到数据库中的相对路径
+//        String DBPath = "/" + userID;
+//
+//        FileOutputStream fileOutputStream = null;
+//        InputStream inputStream = null;
+//
+//        if (files != null && files.length > 0) {
+//            String fileName = files[0].getOriginalFilename();
+//
+//            if (StringUtils.isNotBlank(fileName)) {
+//                // 文件保存路径
+//                String filePath = fileSpace + DBPath + "/" + fileName;
+//                DBPath += "/" + fileName;
+//
+//                File outputFile = new File(filePath);
+//
+//                if (outputFile.getParentFile() != null && !outputFile.getParentFile().isDirectory()) {
+//                    // 创建父文件夹
+//                    outputFile.getParentFile().mkdirs();
+//                }
+//
+//                try {
+//                    fileOutputStream = new FileOutputStream(outputFile);
+//                    inputStream = files[0].getInputStream();
+//                    IOUtils.copy(inputStream, fileOutputStream);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                    return JsonResult.errorMsg("上传出现错误...");
+//                }
+//                finally {
+//                    if (fileOutputStream != null) {
+//                        fileOutputStream.flush();
+//                        fileOutputStream.close();
+//                    }
+//                }
+//            }
+//        }
 
-        FileOutputStream fileOutputStream = null;
-        InputStream inputStream = null;
-
-        if (files != null && files.length > 0) {
-            String fileName = files[0].getOriginalFilename();
-
-            if (StringUtils.isNotBlank(fileName)) {
-                // 文件保存路径
-                String filePath = fileSpace + DBPath + "/" + fileName;
-                DBPath += "/" + fileName;
-
-                File outputFile = new File(filePath);
-
-                if (outputFile.getParentFile() != null && !outputFile.getParentFile().isDirectory()) {
-                    // 创建父文件夹
-                    outputFile.getParentFile().mkdirs();
-                }
-
-                try {
-                    fileOutputStream = new FileOutputStream(outputFile);
-                    inputStream = files[0].getInputStream();
-                    IOUtils.copy(inputStream, fileOutputStream);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    return JsonResult.errorMsg("上传出现错误...");
-                }
-                finally {
-                    if (fileOutputStream != null) {
-                        fileOutputStream.flush();
-                        fileOutputStream.close();
-                    }
-                }
-            }
-        }
-
-        User user = new User();
-        user.setId(Integer.parseInt(userID));
-        user.setFaceImage(DBPath);
-        userService.updateUserFace(user);
+//        User user = new User();
+//        user.setId(Integer.parseInt(userID));
+//        user.setFaceImage(DBPath);
+//        userService.updateUserFace(user);
 
 
-        return JsonResult.ok(DBPath);
+        return JsonResult.ok();
     }
 }

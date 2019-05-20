@@ -23,10 +23,13 @@ public class Moment {
     private Integer userId;
 
     @Column(name = "username")
-    private String userName;
+    private String username;
 
     @Column(name = "face_image")
     private String faceImage;
+
+    @Column(name = "title")
+    private String title;
 
     @Column(name = "content")
     private String content;

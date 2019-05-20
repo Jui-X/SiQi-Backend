@@ -15,10 +15,13 @@ public class MomentDTO {
     private Integer id;
 
     /** 用户名 */
-    private String userName;
+    private String username;
 
     /** 用户头像 */
     private String faceImage;
+
+    /** 标题 */
+    private String title;
 
     /** 内容 */
     private String content;
